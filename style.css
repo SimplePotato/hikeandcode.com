@@ -1,0 +1,208 @@
+body {
+    background:rgba(0, 0, 0, 0.9);
+    margin: 0;
+    color: rgb(164, 235, 208);
+    font-family: "Segoe UI, Tahoma, Geneva, Verdana, sans-serif";
+}
+
+.showcase::after{
+    content: "";
+    height: 100vh;
+    width: 100%;
+    background-image: url(img/hiker_and_mountains.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: block;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    transition: all 1000ms;
+}
+
+.showcase:hover::after {
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+}
+
+.stuff:hover .content {
+    filter: blur(2px);
+    -webkit-filter: blur(2px);
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    top: 5%;
+    left: 50%;
+    margin-top: 5px;
+    margin-left: -145px;
+    width: 300px;
+    height: 350px;
+    text-align: center;
+    transition: all 1000ms;
+}
+
+.content .logo {
+    height: 50%;
+    width: 50%;
+}
+
+.content .title {
+    font-size: 2.4rem;
+    margin-top: 5rem;
+}
+
+.content .text{
+    font-size: 1.8rem;
+    line-height: 1.7;
+    margin-top: 1rem;
+}
+
+.container{
+    max-width: 960px;
+    margin:auto;
+    overflow: hidden;
+    padding: 4rem 1rem;
+}
+
+.grid-3{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-2{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.center{
+    text-align: center;
+    margin: auto;
+}
+
+.bg-light{
+    background: #f4f4f4;
+    color: #333;
+}
+
+.bg-dark{
+    background: #333;
+    color: #f4f4f4;
+}
+
+footer{
+    padding:2.2rem;
+}
+
+footer p{
+    margin: 0;
+}
+
+/*form*/
+
+input.rounded {
+
+    border: 1px solid #ccc;
+     
+    /* Safari 5, Chrome support border-radius without vendor prefix.
+     * FF 3.0/3.5/3.6, Mobile Safari 4.0.4 require vendor prefix.
+     * No support in Safari 3/4, IE 6/7/8, Opera 10.0.
+     */
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    
+    /* Chrome, FF 4.0 support box-shadow without vendor prefix.
+     * Safari 3/4/5 and FF 3.5/3.6 require vendor prefix.
+     * No support in FF 3.0, IE 6/7/8, Opera 10.0, iPhone 3.
+     * change the offsets, blur and color to suit your design.
+     */
+    -moz-box-shadow: 2px 2px 3px #666;
+    -webkit-box-shadow: 2px 2px 3px #666;
+    box-shadow: 2px 2px 3px #666;
+    
+    /* using a bigger font for demo purposes so the box isn't too small */
+    font-size: 20px;
+    
+    /* with a big radius/font there needs to be padding left and right
+     * otherwise the text is too close to the radius.
+     * on a smaller radius/font it may not be necessary
+     */
+    padding: 4px 7px;
+    
+    /* only needed for webkit browsers which show a rectangular outline;
+     * others do not do outline when radius used.
+     * android browser still displays a big outline
+     */
+    outline: 0;
+  
+    /* this is needed for iOS devices otherwise a shadow/line appears at the
+     * top of the input. depending on the ratio of radius to height it will
+     * go all the way across the full width of the input and look really messy.
+     * ensure the radius is no more than half the full height of the input, 
+     * and the following is set, and everything will render well in iOS.
+     */
+    -webkit-appearance: none;
+    
+  }
+  
+  input.rounded:focus {
+    
+    /* supported IE8+ and all other browsers tested.
+     * optional, but gives the input focues when selected.
+     * change to a color that suits your design.
+     */
+    border: 3px solid rgb(164, 235, 208);
+    
+    
+  }
+
+/*small screens*/
+@media(max-width: 560px){
+    .showcase::after{
+        height: 50vh;
+    }
+    
+    .content{
+        top: 2%;
+        margin-top: 5px;
+    }
+    
+    .content .logo{
+        height: 50px;
+        width: 50px;
+    }
+    
+    .content .text{
+        display: none;
+    }
+    
+    .grid-3,
+    .grid-2{
+        grid-template-columns: 1fr;
+    }
+    
+    .stuff div{
+        border-bottom: #333 dashed 1px;
+        padding: 1.2rem 1rem;
+    }
+
+}
+
+/*landscape*/
+@media(max-height: 500px){
+    .content .text{
+        display: none;
+    }
+    
+    .content .logo{
+        height: 100px;
+        width: 100px;
+    }
+    
+    .content{
+        top: 1%;
+    }
+}
