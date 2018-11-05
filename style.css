@@ -92,6 +92,14 @@ body {
     color: #f4f4f4;
 }
 
+.fa-twitter{
+    color: rgb(164, 235, 208); 
+}
+ 
+ .fa-twitter:hover {
+   color: rgba(17, 238, 153, 0.753);
+ }
+
 footer{
     padding:2.2rem;
 }
@@ -100,7 +108,7 @@ footer p{
     margin: 0;
 }
 
-/*form*/
+/*formspree.io form*/
 
 input.rounded {
 
